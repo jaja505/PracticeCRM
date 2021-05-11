@@ -1,7 +1,16 @@
 package com.nextbaseCRM.tests;
 
+
+import com.nextbaseCRM.utilities.ConfigurationReader;
+import com.nextbaseCRM.utilities.Driver;
+
 public class test {
     public static void main(String[] args) {
-        System.out.println("hello world");
+
+       Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+
+        System.out.println(ConfigurationReader.getProperty("url"));
+
+
     }
 }

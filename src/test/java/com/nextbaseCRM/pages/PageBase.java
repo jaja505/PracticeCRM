@@ -1,6 +1,6 @@
 package com.nextbaseCRM.pages;
 
-public class LoginPage {
+public class PageBase {
 
 
 }

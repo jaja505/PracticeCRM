@@ -18,6 +18,14 @@ public class BrowserUtils {
 
     }
 
+    public static void URLVerification(String expectedURL){
+
+        String actualTitle = Driver.getDriver().getCurrentUrl();
+
+        Assert.assertEquals(actualTitle,expectedURL);
+
+    }
+
     public static void hoverOver(WebElement element){
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(element).perform();

@@ -26,7 +26,7 @@ public class Login_StepDefinitions {
     @When("user enters marketing username")
     public void user_enters_marketing_username() {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
 

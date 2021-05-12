@@ -26,6 +26,7 @@ public class Login_StepDefinitions extends LoginPage {
     public void user_should_see_homepage() {
         BrowserUtils.URLVerification("https://login1.nextbasecrm.com/");
 
+
     }
 
 

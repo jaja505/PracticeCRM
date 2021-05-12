@@ -33,7 +33,7 @@ public class Login_StepDefinitions {
     @When("user enters helpDesk username")
     public void user_enters_help_desk_username() {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
 

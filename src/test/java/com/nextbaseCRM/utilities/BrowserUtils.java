@@ -3,7 +3,6 @@ package com.nextbaseCRM.utilities;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -26,6 +25,13 @@ public class BrowserUtils {
 
     }
 
+    public static boolean URLVerificationReturnBoolean(String expectedURL){
+
+        return Driver.getDriver().getCurrentUrl().equals(expectedURL);
+    }
+
+
+
     public static void hoverOver(WebElement element){
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(element).perform();
@@ -45,6 +51,12 @@ public class BrowserUtils {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),timeInSecond);
 
         return wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public static Boolean waitForURLLoad (int timeInSecond, String expectURL){
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),timeInSecond);
+
+        return wait.until(ExpectedConditions.titleIs(expectURL));
     }
 
 //

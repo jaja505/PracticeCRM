@@ -1,5 +1,6 @@
 package com.nextbaseCRM.step_defenitions;
 
+import com.nextbaseCRM.pages.LoginPage;
 import com.nextbaseCRM.utilities.ConfigurationReader;
 import com.nextbaseCRM.utilities.Driver;
 import io.cucumber.java.After;
@@ -10,7 +11,9 @@ import org.openqa.selenium.TakesScreenshot;
 
 import java.util.concurrent.TimeUnit;
 
-public class Hooks {
+public class Hooks extends LoginPage {
+
+    LoginPage loginPage = new LoginPage();
 
     @Before
     public void SetUp() {

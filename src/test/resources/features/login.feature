@@ -1,3 +1,4 @@
+@login
 Feature: NextBaseCRM login feature
   As a user, I should be able to login with correct credentials to different account.
   Account are: hr, marketing, helpDesk

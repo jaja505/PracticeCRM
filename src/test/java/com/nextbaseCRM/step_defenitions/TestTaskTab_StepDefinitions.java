@@ -16,18 +16,24 @@ public class TestTaskTab_StepDefinitions extends TaskTabPage {
     public void user_is_already_login() {
         taskTabPage.login();
         BrowserUtils.sleep(1);
+        BrowserUtils.waitUntilUrlToBe("https://login1.nextbasecrm.com/stream/?login=yes");
+        Assert.assertTrue(BrowserUtils.getCurrentPageURL().contains("https://login1.nextbasecrm.com/stream/"));
     }
 
 
     @When("user is on the homepage")
     public void user_is_on_the_homepage() {
         BrowserUtils.sleep(1);
-        BrowserUtils.URLVerificationReturnBoolean("https://login1.nextbasecrm.com/");
-        taskTabPage.btnTaskMenuTab.click();
+        if (!BrowserUtils.getCurrentPageURL().contains("https://login1.nextbasecrm.com/stream/")) {
+            taskTabPage.btnTaskMenuTab.click();
+        }
+        Assert.assertTrue(BrowserUtils.getCurrentPageURL().contains("https://login1.nextbasecrm.com/stream/"));
+
     }
 
     @When("user click on High Priority checkbox from task tab")
     public void user_click_on_high_priority_checkbox_from_task_tab() {
+        taskTabPage.btnTaskMenuTab.click();
         taskTabPage.checkboxHighPriority.click();
         taskTabPage.checkboxHighPriority.getAttribute("value");
 
@@ -35,28 +41,23 @@ public class TestTaskTab_StepDefinitions extends TaskTabPage {
         );
     }
 
-//    @Then("current task should be on top priority task")
-//    public void current_task_should_be_on_top_priority_task() {
-//        // Write code here that turns the phrase above into concrete actions
-//        throw new io.cucumber.java.PendingException();
-//    }
-
     @When("user click on Visual Editor from task tab")
     public void user_click_on_visual_editor_from_task_tab() {
+        taskTabPage.btnTaskMenuTab.click();
+        taskTabPage.btlVisualEditor.click();
+        Assert.assertTrue(taskTabPage.barVisualEditor.isDisplayed());
 
     }
 
     @Then("user should see the editor text-bar displays on top of the message box from task tab")
     public void user_should_see_the_editor_text_bar_displays_on_top_of_the_message_box_from_task_tab() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Assert.assertTrue(taskTabPage.barVisualEditor.isDisplayed());
     }
 
 
     @When("user click on upload files icon from task tab")
     public void user_click_on_upload_files_icon_from_task_tab() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @Then("user able to upload {string} from local disk, on the task tab")

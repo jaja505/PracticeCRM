@@ -3,7 +3,7 @@ package com.nextbaseCRM.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class TaskTabPage extends PageBase{
+public class TaskTabPage extends PageBase {
 
     @FindBy(id = "tasks-task-priority-cb")
     public WebElement checkboxHighPriority;
@@ -14,7 +14,10 @@ public class TaskTabPage extends PageBase{
     @FindBy(id = "bx-html-editor-tlbr-cnt-lifefeed_task_form")
     public WebElement barVisualEditor;
 
+    @FindBy(linkText = "bx-b-uploadfile-task-form-lifefeed_task_form")
+    public WebElement btlUploadFile;
 
+    @FindBy()
 
 
 }

@@ -220,6 +220,8 @@ public class BrowserUtils {
         act.moveToElement(Driver.getDriver().findElement(By.xpath(xpath))).perform();
     }
 
+
+
     public static void turnOnImplicitWait() {
         Driver.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }

@@ -6,7 +6,11 @@ import com.nextbaseCRM.utilities.Driver;
 import io.cucumber.java.en.*;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+
+import java.io.File;
 
 public class TestTaskTab_StepDefinitions extends TaskTabPage {
 
@@ -57,6 +61,26 @@ public class TestTaskTab_StepDefinitions extends TaskTabPage {
 
     @When("user click on upload files icon from task tab")
     public void user_click_on_upload_files_icon_from_task_tab() {
+        taskTabPage.btnTaskMenuTab.click();
+        taskTabPage.btlUploadFile.click();
+
+        BrowserUtils.waitUntilVisible(taskTabPage.displayUploadFilesOption);
+        Assert.assertTrue(taskTabPage.displayUploadFilesOption.isDisplayed());
+
+       // File file = new File("gaby_blaaser (1).png");
+       // Actions actions = new Actions(Driver.getDriver());
+       // actions.dragAndDrop("C:\\Users\\jnove\\IdeaProjects\\PracticeCRM\\gaby_blaaser (1).png",taskTabPage.btlUploadFilesAndImages)
+
+       // taskTabPage.btlUploadFilesAndImages.sendKeys("C:\\Users\\jnove\\IdeaProjects\\PracticeCRM\\gaby_blaaser (1).png");
+        BrowserUtils.sleep(5);
+
+
+
+
+
+
+
+
 
     }
 

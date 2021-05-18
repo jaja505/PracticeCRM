@@ -14,10 +14,17 @@ public class TaskTabPage extends PageBase {
     @FindBy(id = "bx-html-editor-tlbr-cnt-lifefeed_task_form")
     public WebElement barVisualEditor;
 
-    @FindBy(linkText = "bx-b-uploadfile-task-form-lifefeed_task_form")
+    @FindBy( id= "bx-b-uploadfile-task-form-lifefeed_task_form")
     public WebElement btlUploadFile;
 
-    @FindBy()
+    @FindBy(xpath = "(//table[@class='diskuf-selector-table wd-fa-add-file-light-table'])[5]")
+    public WebElement displayUploadFilesOption;
+
+    @FindBy(xpath = "(//div[@class='diskuf-uploader'])[5]")
+    public WebElement btlUploadFilesAndImages;
+
+
+
 
 
 }
